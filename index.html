@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/flexiblefox-logo-mark.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111114" />
+    <meta
+      name="description"
+      content="FlexibleFox 创作工作台界面框架。"
+    />
+    <title>FlexibleFox 灵狐 · 创作工作台</title>
+    <style>
+      html,
+      body,
+      #root {
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: #111114;
+      }
+
+      .boot-screen {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        background:
+          radial-gradient(circle at 50% 45%, rgba(139, 116, 255, 0.12), transparent 32%),
+          #111114;
+        color: #f5f3ff;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .boot-content {
+        display: grid;
+        justify-items: center;
+        gap: 14px;
+      }
+
+      .boot-fox {
+        display: block;
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+
+      .boot-spinner {
+        width: 24px;
+        height: 24px;
+        border: 3px solid rgba(161, 140, 255, 0.2);
+        border-top-color: #9f8cff;
+        border-radius: 50%;
+        animation: boot-spin 750ms linear infinite;
+      }
+
+      .boot-content strong {
+        font-size: 14px;
+        letter-spacing: 0.02em;
+      }
+
+      .boot-content span:last-child {
+        color: #9995aa;
+        font-size: 12px;
+      }
+
+      @keyframes boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-screen" role="status" aria-live="polite">
+        <div class="boot-content">
+          <img class="boot-fox" src="/assets/flexiblefox-logo-mark.png" alt="" aria-hidden="true" />
+          <span class="boot-spinner" aria-hidden="true"></span>
+          <strong data-boot-title>FlexibleFox 正在加载</strong>
+          <span data-boot-copy>首次打开需要一点时间，请稍候…</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      try {
+        if (window.localStorage.getItem("flexiblefox-language") === "en") {
+          document.documentElement.lang = "en";
+          document.querySelector("[data-boot-title]").textContent = "FlexibleFox is loading";
+          document.querySelector("[data-boot-copy]").textContent = "The first launch may take a moment…";
+        }
+      } catch {
+        // Keep the default Chinese loading screen when storage is unavailable.
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

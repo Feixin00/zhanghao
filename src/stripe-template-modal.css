@@ -1,0 +1,223 @@
+.sh-template-modal {
+  height: min(780px, 100%);
+  background: #f5f7f9;
+}
+
+.sh-template-modal > header {
+  height: auto;
+  min-height: 76px;
+  padding: 16px 20px;
+}
+
+.sh-template-modal > header > div {
+  display: grid;
+  gap: 4px;
+}
+
+.sh-template-modal > header p {
+  color: #667990;
+  font-size: 13px;
+}
+
+.sh-template-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 20px 14px;
+  border-bottom: 1px solid #dde4ec;
+}
+
+.sh-template-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #62748a;
+  font-weight: 600;
+  transition: background-color 120ms ease-in-out, color 120ms ease-in-out;
+}
+
+.sh-template-tabs button small {
+  color: #8a98aa;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.sh-template-tabs button small.is-ready {
+  color: #0a8f5b;
+}
+
+.sh-template-tabs button:hover {
+  background: #e9edf2;
+  color: #37485e;
+}
+
+.sh-template-tabs button.is-active {
+  background: #fff;
+  color: #635bff;
+  box-shadow: 0 1px 2px #20304c18;
+}
+
+.sh-template-modal .sh-add-scroll {
+  padding: 16px 20px 20px;
+}
+
+.sh-template-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px 1fr 22px;
+  grid-template-rows: auto auto 1fr;
+  gap: 14px 10px;
+  min-height: 224px;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #fff;
+  color: #3c4250;
+  text-align: left;
+  transition: border-color 120ms ease-in-out, box-shadow 120ms ease-in-out;
+}
+
+.sh-template-card:hover {
+  border-color: #b9c5d5;
+  box-shadow: 0 2px 8px #20304c15;
+}
+
+.sh-template-card:focus-visible {
+  outline: 3px solid #9ec9ff;
+  outline-offset: 1px;
+}
+
+.sh-template-card.is-selected {
+  border-color: #635bff;
+  box-shadow: inset 0 0 0 1px #635bff;
+}
+
+.sh-platform-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 9px;
+  background: #eef0f3;
+  color: #17191e;
+  overflow: hidden;
+}
+
+.sh-platform-mark.is-xhs {
+  background: #fff0f1;
+  color: #ff2442;
+}
+
+.sh-platform-mark.is-youtube {
+  background: #fff0f0;
+  color: #ff0033;
+}
+
+.sh-platform-mark.is-reddit {
+  background: #fff1eb;
+  color: #ff4500;
+}
+
+.sh-platform-mark.is-douyin {
+  background: #17171a;
+  color: #fff;
+}
+
+.sh-platform-mark.is-weibo {
+  background: #fff7e7;
+  color: #f59a23;
+}
+
+.sh-platform-mark.is-x {
+  background: #17171a;
+  color: #fff;
+}
+
+.sh-template-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.sh-template-copy > strong {
+  font-size: 15px;
+}
+
+.sh-template-copy > small {
+  color: #667990;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.sh-template-platform {
+  color: #7b8ba0;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.sh-template-card > .sh-selection {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border: 1px solid #c5cfdb;
+  border-radius: 50%;
+  color: #71849b;
+}
+
+.sh-template-card.is-selected > .sh-selection {
+  border-color: #635bff;
+  background: #635bff;
+  color: #fff;
+}
+
+.sh-template-preview {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.sh-template-preview > span {
+  display: grid;
+  gap: 2px;
+  padding: 8px;
+  border-radius: 6px;
+  background: #f5f7fa;
+}
+
+.sh-template-preview small {
+  color: #7a8ba1;
+  font-size: 10px;
+}
+
+.sh-template-preview strong {
+  font-size: 13px;
+}
+
+.sh-template-chart {
+  position: relative;
+  display: block;
+  grid-column: 1 / -1;
+  height: 54px;
+  overflow: hidden;
+  border-bottom: 1px solid #e0e6ee;
+}
+
+.sh-template-count {
+  margin-right: auto;
+  color: #667990;
+  font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  .sh-template-tabs {
+    overflow-x: auto;
+  }
+
+  .sh-template-card {
+    min-height: 220px;
+  }
+}

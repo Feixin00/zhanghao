@@ -1,0 +1,53 @@
+{
+  "name": "flexiblefox-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0 <21 || >=22"
+  },
+  "scripts": {
+    "dev": "node server/index.js --dev",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "start": "node server/index.js",
+    "test": "npm run test:auto-generation && npm run test:account-relations && npm run test:ai-configurations && npm run test:publishing-accounts && npm run test:publishing-flow && npm run test:crawler && npm run test:x-thread && npm run test:ai-generation",
+    "test:publishing-flow": "node tests/publishing-images.mjs && node tests/publishing-flow.mjs && node tests/draft-media.mjs",
+    "test:auto-generation": "node tests/auto-generation-settings.mjs",
+    "test:account-relations": "node tests/account-content-relations.mjs",
+    "test:ai-configurations": "node tests/ai-configuration-types.mjs",
+    "test:publishing-accounts": "node tests/publishing-accounts.mjs",
+    "test:crawler": "node tests/crawler-service-e2e.mjs",
+    "test:x-thread": "node tests/x-thread-parser.mjs",
+    "test:ai-generation": "node tests/ai-generation-e2e.mjs",
+    "crawler:save-state": "node server/crawler-cli.js --login-only --export-cookies \"./spider/推特爬虫/x-login-state.json\"",
+    "crawler:login": "node server/crawler-cli.js --login-only",
+    "crawler:export-cookies": "node server/crawler-cli.js --login-only --export-cookies \"./spider/推特爬虫/x-cookies.json\"",
+    "crawler:import-cookies": "node server/crawler-cli.js --headless --import-cookies \"./spider/推特爬虫/x-cookies.json\""
+  },
+  "dependencies": {
+    "@heroui/react": "^3.2.4",
+    "@heroui/styles": "^3.2.4",
+    "@phosphor-icons/react": "^2.1.10",
+    "better-sqlite3": "^12.11.1",
+    "compression": "^1.8.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "lenis": "^1.3.26",
+    "lucide-react": "^1.49.0",
+    "motion": "^13.4.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.35.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^7.1.2"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.1": true
+  }
+}
